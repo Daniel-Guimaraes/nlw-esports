@@ -1,0 +1,191 @@
+/* --------------------------------------- GERAL ------------------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --color-h2: hsl(0, 0%, 100%);
+  --color-p: hsl(240, 5%, 65%);
+
+  --background-body: hsl(240, 5%, 7%);
+  --background-cards: hsl(257, 16%, 18%);
+
+  --color-border-secondary: hsl(256, 15%, 29%);
+  --color-border-primary: linear-gradient(
+    90deg,
+    #9572fc 0%,
+    #43e7ad 50.52%,
+    #e2d45c 100%
+  );
+}
+
+body {
+  font-size: 1.6rem;
+  background-image: url(./assets/Fundo.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top center;
+  background-color: var(--background-body);
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  line-height: 160%;
+}
+
+/* --------------------------------------- LOGO ------------------------------------------ */
+
+header {
+  padding-top: 3.2rem;
+  height: 15.2rem;
+}
+
+header div {
+  width: 12rem;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--color-border-primary);
+
+  display: flex;
+  padding: 0.4rem;
+
+  transition: transform 0.3s;
+}
+
+header div:hover {
+  transform: scale(1.1);
+}
+
+header img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* --------------------------------------- CARDS ------------------------------------------ */
+
+main {
+  max-width: 58rem;
+  width: 90%;
+  margin: 3.2rem auto;
+
+  display: grid;
+  gap: 2.4rem;
+}
+
+section {
+  background: var(--color-border-primary);
+  border-radius: 1rem;
+  padding-top: 0.4rem;
+}
+
+section .card {
+  background-color: var(--background-cards);
+  padding: 3.2rem;
+  padding-top: 2.4rem;
+  border-radius: 0.8rem;
+}
+
+section h2 {
+  font-size: 2.4rem;
+  letter-spacing: -0.47px;
+  color: var(--color-h2);
+}
+
+section p {
+  letter-spacing: -0.18px;
+  color: var(--color-p);
+}
+
+section ul {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+}
+
+section ul li {
+  transition: transform 0.3s;
+}
+
+section ul li:hover {
+  transform: scale(1.1);
+}
+
+.games-list img {
+  border-radius: 0.8rem;
+  width: 9rem;
+}
+
+.channel-list img {
+  border-radius: 50%;
+  width: 7rem;
+  border: 1px solid var(--color-border-secondary);
+}
+
+/* --------------------------------------- HEADER ANIMATION ------------------------------------------ */
+
+header div {
+  animation: fromTop 0.7s 0.2s backwards;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------- CARDS ANIMATION ------------------------------------------ */
+
+section {
+  animation: fromLeft 0.8s backwards;
+}
+
+section:nth-child(2) {
+  animation: fromRight 0.8s 0.4s backwards
+}
+
+section:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-3rem)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+@keyframes fromRight {
+  from {
+    opacity: 0;
+    transform: translateX(3rem)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}
+
+
+
+
